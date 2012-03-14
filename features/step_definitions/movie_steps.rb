@@ -11,9 +11,9 @@ end
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 
-Then /I should (not)? see all of the movies/ do |noT, movies_table|
+Then /I should (not )?see all of the movies/ do |noT, movies_table|
   movies_table.hashes.each do |movie|
-    step %Q{I should #{noT} see "#{movie[:title]}"}
+    step %Q{I should #{noT}see "#{movie[:title]}"}
   end
 end
 
