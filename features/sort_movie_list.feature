@@ -23,7 +23,9 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   # your steps here
-  When I follow "Movie Title"
+  When I check the following ratings: PG R PG-13 NC-17 G
+  And I press "Refresh"
+  And I follow "Movie Title"
   Then I should see all of the movies
   | title                   |
   | 2001: A Space Odyssey   |
@@ -39,8 +41,10 @@ Scenario: sort movies alphabetically
 
 Scenario: sort movies in increasing order of release date
   # your steps here
-<<<<<<< HEAD
-  When I follow "Release Date"
+  When I check the following ratings: PG R PG-13 NC-17 G
+  And I press "Refresh"
+  And I follow "Release Date"
+
   #Then I should see "The Terminator" before "Aladdin"
   Then I should see all of the movies
   | title                   |
@@ -54,6 +58,3 @@ Scenario: sort movies in increasing order of release date
   | Amelie                  |
   | The Incredibles         |  
   | The Help                |
-=======
-
->>>>>>> parent of a47f639... sort by date
