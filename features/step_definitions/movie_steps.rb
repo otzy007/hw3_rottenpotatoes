@@ -11,8 +11,10 @@ end
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 
-Then /I should see all of the movies/ do |movies_table|
-  
+Then /I should (not)? see all of the movies/ do |noT, movies_table|
+  movies_table.hashes.each do |movie|
+    step %Q{I #{noT} see "#{movie[:title]}"}
+  end
 end
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
