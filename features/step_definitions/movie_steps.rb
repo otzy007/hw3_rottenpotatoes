@@ -13,7 +13,7 @@ end
 
 Then /I should (not)? see all of the movies/ do |noT, movies_table|
   movies_table.hashes.each do |movie|
-    step %Q{I #{noT} see "#{movie[:title]}"}
+    step %Q{I should #{noT} see "#{movie[:title]}"}
   end
 end
 
